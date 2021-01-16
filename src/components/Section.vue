@@ -1,13 +1,13 @@
 <template>
-  <p>Hello!</p>
+  <div class="sectionContainer">
+    <div class="sectionTitle">{{ section.name }}</div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "HelloWorld",
-  props: {
-    msg: String,
-  },
+  name: "Section",
+  props: ["section"],
 };
 </script>
 
