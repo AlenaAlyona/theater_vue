@@ -43,7 +43,7 @@ export const layout = {
       name: "balcony",
       rows: [
         {
-          row: "1",
+          row: "3",
           seats: [
             { seat: "1", rank: "rank1" },
             { seat: "3", rank: "rank1" },
@@ -63,7 +63,7 @@ export const layout = {
           ],
         },
         {
-          row: "3",
+          row: "5",
           seats: [
             { seat: "1", rank: "rank2" },
             { seat: "3", rank: "rank2" },
