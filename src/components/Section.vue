@@ -2,11 +2,9 @@
   <div class="sectionContainer">
     <div class="sectionTitle">{{ sectionData.name }}</div>
     <div>
-      <div v-for="row in sortedRowsSeats" :key="row.row">
+      <div v-for="row in sortedRows" :key="row.row">
         <strong> {{ row.row }}</strong>
-        <!-- 
-        <div>{{ row.seats.seat }}</div> -->
-        <div v-for="seat in sortedSeats" :key="seat">{{ seat }}</div>
+        <div v-for="seat in row.seats" :key="seat.seat">{{ seat.seat }}</div>
       </div>
     </div>
   </div>
@@ -22,21 +20,14 @@ export default {
     };
   },
   computed: {
-    sortedRowsSeats: function() {
+    sortedRows: function() {
       const sortedRows = [...this.sectionData.rows].sort(
         (a, b) => a.row - b.row
       );
-      // const sortedRowsAndSeats = sortedRows.map((row) => {
-      //   row.seats = row.seats.sort((a, b) => a.seat - b.seat);
-      // });
-      return sortedRows;
-    },
-    sortedSeats: function() {
-      const rows = this.sortedRowsSeats;
-      const sortedSeats = rows.map((row) => {
-        row.seats.sort((a, b) => a.seat - b.seat);
+      sortedRows.forEach((row) => {
+        row.seats = row.seats.sort((a, b) => a.seat - b.seat);
       });
-      return sortedSeats;
+      return sortedRows;
     },
   },
 };
