@@ -24,11 +24,15 @@ export default {
 
   computed: {
     sectionsToDisplay: function() {
+      let i = 0;
       const sectionsToDisplay = [...layout.sections].map((section) => {
         const groupInSection = groups.filter(
           (group) => group.seats[0].section === section.name
         );
-
+        groupInSection.forEach((group) => {
+          group.phone = group.id;
+          group.id = i++;
+        });
         section.groups = groupInSection ? groupInSection : null;
         return section;
       });
