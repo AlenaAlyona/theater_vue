@@ -30,6 +30,9 @@ export default {
       return sortedRows;
     },
   },
+  methods: {
+    isBooked: function() {},
+  },
 };
 </script>
 

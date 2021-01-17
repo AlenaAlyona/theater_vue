@@ -1,28 +1,39 @@
 <template>
   <div class="layoutContainer">
-    <div
-      class="sectionName"
-      v-for="section in layoutData.sections"
-      :key="section.name"
-    >
-      <Section v-bind:section="section" />
+    <div v-if="sectionToDisplay">
+      <div
+        class="sectionName"
+        v-for="section in sectionToDisplay"
+        :key="section.name"
+      >
+        <Section v-bind:section="section" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Section from "./Section.vue";
-import { layout } from "../config/constants";
+import { layout, groups } from "../config/constants";
 
 export default {
   name: "Layout",
   components: {
     Section,
   },
-  data() {
-    return {
-      layoutData: layout,
-    };
+
+  computed: {
+    sectionToDisplay: function() {
+      const sectionToDisplay = [...layout.sections].map((section) => {
+        const groupInSection = groups.filter(
+          (group) => group.seats[0].section === section.name
+        );
+
+        section.groups = groupInSection ? groupInSection : null;
+        return section;
+      });
+      return sectionToDisplay;
+    },
   },
 };
 </script>
