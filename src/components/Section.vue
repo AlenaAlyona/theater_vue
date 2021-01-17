@@ -1,8 +1,8 @@
 <template>
   <div class="sectionContainer">
-    <div class="sectionTitle">{{ sectionData.name }}</div>
+    <div class="sectionTitle">{{ section.name }}</div>
     <div>
-      <div v-for="row in sortedRows" :key="row.row">
+      <div v-for="row in sortedRows.rows" :key="row.row">
         <strong> {{ row.row }}</strong>
         <div v-for="seat in row.seats" :key="seat.seat">{{ seat.seat }}</div>
       </div>
@@ -14,24 +14,15 @@
 export default {
   name: "Section",
   props: ["section"],
-  data() {
-    return {
-      sectionData: this.section,
-    };
-  },
+
   computed: {
     sortedRows: function() {
-      const sortedRows = [...this.sectionData.rows].sort(
-        (a, b) => a.row - b.row
-      );
+      const sortedRows = [...this.section.rows].sort((a, b) => a.row - b.row);
       sortedRows.forEach((row) => {
         row.seats = row.seats.sort((a, b) => a.seat - b.seat);
       });
-      return sortedRows;
+      return { ...this.section, rows: sortedRows };
     },
-  },
-  methods: {
-    isBooked: function() {},
   },
 };
 </script>

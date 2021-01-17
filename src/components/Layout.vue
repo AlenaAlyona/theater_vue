@@ -1,9 +1,9 @@
 <template>
   <div class="layoutContainer">
-    <div v-if="sectionToDisplay">
+    <div v-if="sectionsToDisplay">
       <div
         class="sectionName"
-        v-for="section in sectionToDisplay"
+        v-for="section in sectionsToDisplay"
         :key="section.name"
       >
         <Section v-bind:section="section" />
@@ -23,8 +23,8 @@ export default {
   },
 
   computed: {
-    sectionToDisplay: function() {
-      const sectionToDisplay = [...layout.sections].map((section) => {
+    sectionsToDisplay: function() {
+      const sectionsToDisplay = [...layout.sections].map((section) => {
         const groupInSection = groups.filter(
           (group) => group.seats[0].section === section.name
         );
@@ -32,7 +32,7 @@ export default {
         section.groups = groupInSection ? groupInSection : null;
         return section;
       });
-      return sectionToDisplay;
+      return sectionsToDisplay;
     },
   },
 };
