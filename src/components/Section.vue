@@ -17,11 +17,20 @@ export default {
 
   computed: {
     sortedRows: function() {
-      const sortedRows = [...this.section.rows].sort((a, b) => a.row - b.row);
-      sortedRows.forEach((row) => {
+      const result = [...this.section.rows].sort((a, b) => a.row - b.row);
+      result.forEach((row) => {
         row.seats = row.seats.sort((a, b) => a.seat - b.seat);
       });
-      return { ...this.section, rows: sortedRows };
+      this.section.groups.forEach((group) => {
+        group.seats.forEach((seat) => {
+          result[seat.row - 1].seats[seat.seat - 1] = {
+            ...result[seat.row - 1].seats[seat.seat - 1],
+            group: group.id,
+          };
+        });
+      });
+
+      return { ...this.section, rows: result };
     },
   },
 };
