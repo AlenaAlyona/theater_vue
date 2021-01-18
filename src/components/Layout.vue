@@ -32,6 +32,8 @@ export default {
         groupInSection.forEach((group) => {
           group.phone = group.id;
           group.id = "gr" + i++;
+          group.color =
+            "hsla(" + ~~(360 * Math.random()) + "," + "70%," + "40%,1)";
         });
         section.groups = groupInSection ? groupInSection : null;
         return section;
@@ -42,7 +44,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .layoutContainer {
   width: 100%;

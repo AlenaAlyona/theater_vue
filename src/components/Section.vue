@@ -14,10 +14,13 @@
             <th scope="row" class="sectionRow">{{ row.row }}</th>
             <div class="seatsRow">
               <td
+                v-bind:style="booked(row.row, seat.seat)"
                 v-for="seat in row.seats"
                 :key="seat.seat"
                 class="sectionSeat"
-              ></td>
+              >
+                {{ seat.group }}
+              </td>
             </div>
           </tr>
         </tbody>
@@ -42,6 +45,7 @@ export default {
           result[seat.row - 1].seats[seat.seat - 1] = {
             ...result[seat.row - 1].seats[seat.seat - 1],
             group: group.id,
+            groupColor: group.color,
           };
         });
       });
@@ -49,10 +53,19 @@ export default {
       return { ...this.section, rows: result };
     },
   },
+  methods: {
+    booked: function(row, seat) {
+      const oneSeat = this.sortedRows.rows[row - 1].seats[seat - 1];
+      if (Object.prototype.hasOwnProperty.call(oneSeat, "group")) {
+        return {
+          background: `${oneSeat.groupColor}`,
+        };
+      }
+    },
+  },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .sectionContainer {
   width: 40%;
@@ -98,7 +111,7 @@ table {
 }
 
 .sectionSeat {
-  background-color: #e1dde0;
+  background: #e1dde0;
   width: 1.5rem;
   height: 1.5rem;
   text-align: center;
