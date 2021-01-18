@@ -42,5 +42,17 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  text-size-adjust: 100%;
+}
+
+.title {
+  font-size: 4rem;
+  line-height: 1;
+  font-weight: 600;
+  text-transform: lowercase;
+  margin: 0;
+  color: #fff;
+  margin-top: 8rem;
+  margin-bottom: 4rem;
 }
 </style>
