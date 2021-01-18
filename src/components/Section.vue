@@ -2,12 +2,26 @@
   <div class="sectionContainer">
     <div class="sectionTitle">{{ section.name }}</div>
     <div class="sectionLayout">
-      <p>row</p>
-      <p>seat</p>
-      <div v-for="row in sortedRows.rows" :key="row.row">
-        <strong> {{ row.row }}</strong>
-        <div v-for="seat in row.seats" :key="seat.seat">{{ seat.seat }}</div>
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th class="thRow">row</th>
+            <th colspan="5">seats</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="row in sortedRows.rows" :key="row.row">
+            <th scope="row" class="sectionRow">{{ row.row }}</th>
+            <div class="seatsRow">
+              <td
+                v-for="seat in row.seats"
+                :key="seat.seat"
+                class="sectionSeat"
+              ></td>
+            </div>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
@@ -41,8 +55,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .sectionContainer {
-  width: 60%;
+  width: 40%;
   margin: auto;
+  margin-bottom: 2rem;
 }
 
 .sectionTitle {
@@ -56,5 +71,38 @@ export default {
   border: 1px solid #fff;
   justify-content: center;
   width: 100%;
+}
+
+table {
+  width: 100%;
+  padding: 1rem;
+}
+
+.thRow {
+  width: 4rem;
+  padding-left: 0;
+}
+
+.sectionRow {
+  width: 4rem;
+  height: 2rem;
+  margin: auto;
+}
+
+.seatsRow {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.sectionSeat {
+  background-color: #e1dde0;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  margin: auto;
+  color: #202530;
 }
 </style>

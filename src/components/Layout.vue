@@ -24,14 +24,14 @@ export default {
 
   computed: {
     sectionsToDisplay: function() {
-      let i = 0;
+      let i = 1;
       const sectionsToDisplay = [...layout.sections].map((section) => {
         const groupInSection = groups.filter(
           (group) => group.seats[0].section === section.name
         );
         groupInSection.forEach((group) => {
           group.phone = group.id;
-          group.id = i++;
+          group.id = "gr" + i++;
         });
         section.groups = groupInSection ? groupInSection : null;
         return section;
