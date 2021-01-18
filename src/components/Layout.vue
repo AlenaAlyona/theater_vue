@@ -6,7 +6,6 @@
         v-for="section in sectionsToDisplay"
         :key="section.name"
       >
-        <h3>Theater Layout</h3>
         <Section v-bind:section="section" />
       </div>
     </div>

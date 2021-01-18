@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <h3 class="title">Theater Layout</h3>
     <Layout />
   </div>
 </template>
@@ -17,11 +18,29 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Work Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  background-image: linear-gradient(
+    -55deg,
+    #6d3076,
+    #ff5252 83%,
+    #ff5852 88%,
+    #ff6b52
+  );
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  overflow: auto;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 </style>
