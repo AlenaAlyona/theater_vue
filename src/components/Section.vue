@@ -1,7 +1,9 @@
 <template>
   <div class="sectionContainer">
     <div class="sectionTitle">{{ section.name }}</div>
-    <div>
+    <div class="sectionLayout">
+      <p>row</p>
+      <p>seat</p>
       <div v-for="row in sortedRows.rows" :key="row.row">
         <strong> {{ row.row }}</strong>
         <div v-for="seat in row.seats" :key="seat.seat">{{ seat.seat }}</div>
@@ -38,18 +40,21 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.sectionContainer {
+  width: 60%;
+  margin: auto;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+.sectionTitle {
+  text-transform: capitalize;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+
+.sectionLayout {
+  border: 1px solid #fff;
+  justify-content: center;
+  width: 100%;
 }
 </style>

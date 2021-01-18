@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <h3 class="title">Theater Layout</h3>
     <Layout />
   </div>
@@ -21,8 +21,7 @@ export default {
   font-family: Work Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  /* text-align: center; */
   background-image: linear-gradient(
     -55deg,
     #6d3076,
@@ -32,9 +31,10 @@ export default {
   );
   display: flex;
   height: 100%;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   overflow: auto;
+  color: #fff;
 }
 
 html,
@@ -51,8 +51,9 @@ body {
   font-weight: 600;
   text-transform: lowercase;
   margin: 0;
-  color: #fff;
   margin-top: 8rem;
   margin-bottom: 4rem;
+  width: 100vw;
+  text-align: center;
 }
 </style>
