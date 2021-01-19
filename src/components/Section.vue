@@ -14,7 +14,7 @@
             <th scope="row" class="sectionRow">{{ row.row }}</th>
             <div class="seatsRow">
               <td
-                v-bind:style="booked(row.row, seat.seat)"
+                v-bind:style="booked(seat)"
                 v-for="seat in row.seats"
                 :key="seat.seat"
                 class="sectionSeat"
@@ -53,11 +53,10 @@ export default {
     },
   },
   methods: {
-    booked: function(row, seat) {
-      const oneSeat = this.rowsToDisplay.rows[row - 1].seats[seat - 1];
-      if (Object.prototype.hasOwnProperty.call(oneSeat, "group")) {
+    booked: function(seat) {
+      if (Object.prototype.hasOwnProperty.call(seat, "group")) {
         return {
-          background: `${oneSeat.groupColor}`,
+          background: `${seat.groupColor}`,
         };
       }
     },
