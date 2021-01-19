@@ -10,7 +10,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="row in sortedRows.rows" :key="row.row">
+          <tr v-for="row in rowsToDisplay.rows" :key="row.row">
             <th scope="row" class="sectionRow">{{ row.row }}</th>
             <div class="seatsRow">
               <td
@@ -35,18 +35,17 @@ export default {
   props: ["section"],
 
   computed: {
-    sortedRows: function() {
-      const result = [...this.section.rows].sort((a, b) => a.row - b.row);
-      result.forEach((row) => {
-        row.seats = row.seats.sort((a, b) => a.seat - b.seat);
-      });
+    rowsToDisplay: function() {
+      const result = [...this.section.rows];
       this.section.groups.forEach((group) => {
-        group.seats.forEach((seat) => {
-          result[seat.row - 1].seats[seat.seat - 1] = {
-            ...result[seat.row - 1].seats[seat.seat - 1],
-            group: group.id,
-            groupColor: group.color,
-          };
+        group.seats.forEach((seatInGroup) => {
+          const row = result[seatInGroup.row - 1];
+          row.seats.forEach((seat) => {
+            if (seat.seat === seatInGroup.seat) {
+              seat.group = group.id;
+              seat.groupColor = group.color;
+            }
+          });
         });
       });
 
@@ -55,7 +54,7 @@ export default {
   },
   methods: {
     booked: function(row, seat) {
-      const oneSeat = this.sortedRows.rows[row - 1].seats[seat - 1];
+      const oneSeat = this.rowsToDisplay.rows[row - 1].seats[seat - 1];
       if (Object.prototype.hasOwnProperty.call(oneSeat, "group")) {
         return {
           background: `${oneSeat.groupColor}`,
@@ -105,9 +104,11 @@ table {
 .seatsRow {
   width: 100%;
   height: 100%;
-  display: flex;
+  display: inline-flex;
   justify-content: space-evenly;
   text-align: center;
+  flex-shrink: 1;
+  flex-wrap: wrap;
 }
 
 .sectionSeat {

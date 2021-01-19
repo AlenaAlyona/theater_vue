@@ -51,7 +51,7 @@ body {
   font-weight: 600;
   text-transform: lowercase;
   margin: 0;
-  margin-top: 8rem;
+  margin-top: 5rem;
   margin-bottom: 4rem;
   width: 100vw;
   text-align: center;
