@@ -10,7 +10,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="row in rowsToDisplay.rows" :key="row.row">
+          <tr v-for="row in dataToDisplay.rows" :key="row.row">
             <th scope="row" class="sectionRow">{{ row.row }}</th>
             <div class="seatsRow">
               <td
@@ -35,7 +35,7 @@ export default {
   props: ["section"],
 
   computed: {
-    rowsToDisplay: function() {
+    dataToDisplay: function() {
       const result = [...this.section.rows];
       this.section.groups.forEach((group) => {
         group.seats.forEach((seatInGroup) => {
@@ -57,6 +57,14 @@ export default {
       if (Object.prototype.hasOwnProperty.call(seat, "group")) {
         return {
           background: `${seat.groupColor}`,
+        };
+      } else if (seat.rank === "rank1") {
+        return {
+          background: "#e1dde0",
+        };
+      } else if (seat.rank === "rank2") {
+        return {
+          background: "#9C9C9C",
         };
       }
     },
@@ -111,7 +119,7 @@ table {
 }
 
 .sectionSeat {
-  background: #e1dde0;
+  /* background: #e1dde0; */
   width: 1.5rem;
   height: 1.5rem;
   text-align: center;
