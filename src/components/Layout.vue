@@ -14,10 +14,10 @@
 
 <script>
 import Section from "./Section.vue";
-import { layout, groups } from "../config/constants";
 
 export default {
   name: "Layout",
+  props: ["layout", "groups"],
   components: {
     Section,
   },
@@ -25,8 +25,8 @@ export default {
   computed: {
     sectionsToDisplay: function() {
       let i = 1;
-      const sectionsToDisplay = [...layout.sections].map((section) => {
-        const groupInSection = groups.filter(
+      const sectionsToDisplay = [...this.layout.sections].map((section) => {
+        const groupInSection = this.groups.filter(
           (group) => group.seats[0].section === section.name
         );
         groupInSection.forEach((group) => {

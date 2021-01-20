@@ -1,17 +1,25 @@
 <template>
   <div>
     <h3 class="title">Theater Layout</h3>
-    <Layout />
+    <Layout v-bind:layout="layoutData" v-bind:groups="groupsData" />
   </div>
 </template>
 
 <script>
 import Layout from "./components/Layout.vue";
+import { layout, groups } from "./config/constants";
 
 export default {
   name: "App",
   components: {
     Layout,
+  },
+
+  data() {
+    return {
+      layoutData: layout,
+      groupsData: groups,
+    };
   },
 };
 </script>
