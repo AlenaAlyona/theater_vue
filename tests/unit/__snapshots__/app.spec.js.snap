@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App.vue mount App.vue 1`] = `
+<div>
+  <h3 class="title">Theater Layout</h3>
+  <div class="layoutContainer">
+    <div>
+      <div class="sectionName">
+        <div class="sectionContainer">
+          <div class="sectionTitle">main hall</div>
+          <div class="sectionLayout">
+            <table>
+              <thead>
+                <tr>
+                  <th class="thRow">row</th>
+                  <th colspan="5">seats</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" class="sectionRow">1</th>
+                  <div class="seatsRow">
+                    <td style="background: rgb(225, 221, 224);" class="sectionSeat"></td>
+                    <td style="background: rgb(225, 221, 224);" class="sectionSeat"></td>
+                    <td style="background: rgb(31, 31, 31);" class="sectionSeat">gr1</td>
+                    <td style="background: rgb(31, 31, 31);" class="sectionSeat">gr1</td>
+                  </div>
+                </tr>
+                <tr>
+                  <th scope="row" class="sectionRow">2</th>
+                  <div class="seatsRow">
+                    <td style="background: rgb(225, 221, 224);" class="sectionSeat"></td>
+                    <td style="background: rgb(225, 221, 224);" class="sectionSeat"></td>
+                    <td style="background: rgb(31, 31, 31);" class="sectionSeat">gr2</td>
+                    <td style="background: rgb(31, 31, 31);" class="sectionSeat">gr2</td>
+                    <td style="background: rgb(31, 31, 31);" class="sectionSeat">gr1</td>
+                    <td style="background: rgb(31, 31, 31);" class="sectionSeat">gr1</td>
+                  </div>
+                </tr>
+                <tr>
+                  <th scope="row" class="sectionRow">3</th>
+                  <div class="seatsRow">
+                    <td style="background: rgb(156, 156, 156);" class="sectionSeat"></td>
+                    <td style="background: rgb(156, 156, 156);" class="sectionSeat"></td>
+                    <td style="background: rgb(156, 156, 156);" class="sectionSeat"></td>
+                    <td style="background: rgb(156, 156, 156);" class="sectionSeat"></td>
+                    <td style="background: rgb(156, 156, 156);" class="sectionSeat"></td>
+                    <td style="background: rgb(156, 156, 156);" class="sectionSeat"></td>
+                  </div>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="sectionName">
+        <div class="sectionContainer">
+          <div class="sectionTitle">balcony</div>
+          <div class="sectionLayout">
+            <table>
+              <thead>
+                <tr>
+                  <th class="thRow">row</th>
+                  <th colspan="5">seats</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" class="sectionRow">1</th>
+                  <div class="seatsRow">
+                    <td style="background: rgb(225, 221, 224);" class="sectionSeat"></td>
+                    <td style="background: rgb(225, 221, 224);" class="sectionSeat"></td>
+                    <td style="background: rgb(225, 221, 224);" class="sectionSeat"></td>
+                    <td style="background: rgb(225, 221, 224);" class="sectionSeat"></td>
+                  </div>
+                </tr>
+                <tr>
+                  <th scope="row" class="sectionRow">2</th>
+                  <div class="seatsRow">
+                    <td style="background: rgb(225, 221, 224);" class="sectionSeat"></td>
+                    <td style="background: rgb(225, 221, 224);" class="sectionSeat"></td>
+                    <td style="background: rgb(225, 221, 224);" class="sectionSeat"></td>
+                    <td style="background: rgb(225, 221, 224);" class="sectionSeat"></td>
+                    <td style="background: rgb(225, 221, 224);" class="sectionSeat"></td>
+                    <td style="background: rgb(225, 221, 224);" class="sectionSeat"></td>
+                  </div>
+                </tr>
+                <tr>
+                  <th scope="row" class="sectionRow">3</th>
+                  <div class="seatsRow">
+                    <td style="background: rgb(156, 156, 156);" class="sectionSeat"></td>
+                    <td style="background: rgb(156, 156, 156);" class="sectionSeat"></td>
+                    <td style="background: rgb(31, 31, 31);" class="sectionSeat">gr3</td>
+                    <td style="background: rgb(31, 31, 31);" class="sectionSeat">gr3</td>
+                    <td style="background: rgb(156, 156, 156);" class="sectionSeat"></td>
+                    <td style="background: rgb(156, 156, 156);" class="sectionSeat"></td>
+                  </div>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

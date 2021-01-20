@@ -20,8 +20,8 @@ exports[`Layout.vue mount a Layout component 1`] = `
                 <div class="seatsRow">
                   <td style="background: rgb(225, 221, 224);" class="sectionSeat"></td>
                   <td style="background: rgb(225, 221, 224);" class="sectionSeat"></td>
-                  <td style="background: rgb(31, 31, 31);" class="sectionSeat">gr1</td>
-                  <td style="background: rgb(31, 31, 31);" class="sectionSeat">gr1</td>
+                  <td style="background: rgb(173, 173, 31);" class="sectionSeat">gr1</td>
+                  <td style="background: rgb(173, 173, 31);" class="sectionSeat">gr1</td>
                 </div>
               </tr>
               <tr>
@@ -31,8 +31,8 @@ exports[`Layout.vue mount a Layout component 1`] = `
                   <td style="background: rgb(225, 221, 224);" class="sectionSeat"></td>
                   <td style="background: rgb(31, 31, 31);" class="sectionSeat">gr2</td>
                   <td style="background: rgb(31, 31, 31);" class="sectionSeat">gr2</td>
-                  <td style="background: rgb(31, 31, 31);" class="sectionSeat">gr1</td>
-                  <td style="background: rgb(31, 31, 31);" class="sectionSeat">gr1</td>
+                  <td style="background: rgb(173, 173, 31);" class="sectionSeat">gr1</td>
+                  <td style="background: rgb(173, 173, 31);" class="sectionSeat">gr1</td>
                 </div>
               </tr>
               <tr>
