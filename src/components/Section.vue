@@ -94,7 +94,7 @@ export default {
 
 table {
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 .thRow {
@@ -112,18 +112,18 @@ table {
   width: 100%;
   height: 100%;
   display: inline-flex;
-  justify-content: space-evenly;
+  justify-content: center;
   text-align: center;
   flex-shrink: 1;
   flex-wrap: wrap;
 }
 
 .sectionSeat {
-  /* background: #e1dde0; */
   width: 1.5rem;
   height: 1.5rem;
   text-align: center;
-  margin: auto;
   color: #202530;
+  display: flex;
+  margin: 0.7rem;
 }
 </style>
