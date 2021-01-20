@@ -106,3 +106,69 @@ export const groups = [
     ],
   },
 ];
+
+export const testProps = {
+  name: "main hall",
+  rows: [
+    {
+      row: "1",
+      seats: [
+        {
+          seat: "1",
+          rank: "rank1",
+          group: "gr2",
+          groupColor: "hsla(277,70%,40%,1)",
+        },
+        {
+          seat: "3",
+          rank: "rank1",
+          group: "gr2",
+          groupColor: "hsla(277,70%,40%,1)",
+        },
+        {
+          seat: "4",
+          rank: "rank1",
+          group: "gr1",
+          groupColor: "hsla(40,70%,40%,1)",
+        },
+        {
+          seat: "2",
+          rank: "rank1",
+          group: "gr1",
+          groupColor: "hsla(40,70%,40%,1)",
+        },
+      ],
+    },
+    {
+      row: "2",
+      seats: [
+        { seat: "1", rank: "rank1" },
+        { seat: "3", rank: "rank1" },
+        { seat: "5", rank: "rank2" },
+        { seat: "6", rank: "rank2" },
+        { seat: "4", rank: "rank2" },
+        { seat: "2", rank: "rank2" },
+      ],
+    },
+  ],
+  groups: [
+    {
+      id: "gr1",
+      seats: [
+        { section: "main hall", row: "1", seat: "4" },
+        { section: "main hall", row: "1", seat: "2" },
+      ],
+      phone: "+31611111111",
+      color: "hsla(40,70%,40%,1)",
+    },
+    {
+      id: "gr2",
+      seats: [
+        { section: "main hall", row: "1", seat: "1" },
+        { section: "main hall", row: "1", seat: "3" },
+      ],
+      phone: "+31622222222",
+      color: "hsla(277,70%,40%,1)",
+    },
+  ],
+};
