@@ -100,9 +100,9 @@ export const groups = [
   {
     id: "+31633333333",
     seats: [
-      { section: "balcony", row: "3", seat: "6" },
-      { section: "balcony", row: "3", seat: "5" },
       { section: "balcony", row: "3", seat: "3" },
+      { section: "balcony", row: "3", seat: "5" },
+      { section: "balcony", row: "3", seat: "6" },
     ],
   },
 ];
