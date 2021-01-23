@@ -102,7 +102,7 @@ export const groups = [
     seats: [
       { section: "balcony", row: "3", seat: "6" },
       { section: "balcony", row: "3", seat: "5" },
-      { section: "balcony", row: "3", seat: "" },
+      { section: "balcony", row: "3", seat: "3" },
     ],
   },
 ];
